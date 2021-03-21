@@ -35,8 +35,10 @@ document.getElementById("skip").addEventListener("click", function(){
 		console.log("New location 0");
 		video.currentTime = 0;
 	}
-	video.currentTime += 15;
-	console.log("New location " + video.currentTime);
+	else{
+		video.currentTime += 15;
+		console.log("New location " + video.currentTime);
+	}
 });
 
 var muteButton = document.getElementById("mute");
@@ -53,7 +55,7 @@ muteButton.addEventListener("click", function(){
 
 var slider = document.getElementById("slider");
 var volume = document.getElementById("volume");
-volume.innerHTML = slider.value + "%";
+// volume.innerHTML = slider.value + "%";
 slider.oninput = function() {
 	volume.innerHTML = this.value + "%";
 	video.volume = this.value / 100;
