@@ -1,4 +1,6 @@
 var video = document.getElementById("player1");
+var volume = document.getElementById("volume");
+var slider = document.getElementById("slider");
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
@@ -10,6 +12,7 @@ window.addEventListener("load", function() {
 
 document.getElementById("play").addEventListener("click", function(){
 	video.play();
+	volume.innerHTML = slider.value + "%";
 	console.log("Play video")
 });
 
@@ -53,9 +56,6 @@ muteButton.addEventListener("click", function(){
 	}
 });
 
-var slider = document.getElementById("slider");
-var volume = document.getElementById("volume");
-// volume.innerHTML = slider.value + "%";
 slider.oninput = function() {
 	volume.innerHTML = this.value + "%";
 	video.volume = this.value / 100;
